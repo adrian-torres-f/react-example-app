@@ -88,6 +88,40 @@ npm install zod
 
 Puedes combinarlo con otras librerías como react-hook-form o usarlo de forma independiente para validar inputs, formularios y estructuras complejas.
 
+---
+
+#### 💅 Componentes ShadCN instalados
+Para este proyecto se han instalado los siguientes componentes personalizados de ShadCN/UI:
+
+- Badge
+- Button
+- Card
+- Dialog
+- DropdownMenu
+- Input
+- Label
+- Select
+- Skeleton
+- Sonner (para notificaciones)
+- Textarea
+
+Estos componentes están ubicados en:
+
+```bash
+src/components/ui/
+```
+
+#### 🧩 Cómo instalar un componente ShadCN
+Si deseas agregar un nuevo componente más adelante, puedes usar el siguiente comando:
+
+```bash
+npx shadcn@latest add <componente>
+```
+Por ejemplo, para instalar el componente button:
+
+```bash
+npx shadcn@latest add button
+```
 
 ---
 
