@@ -1,4 +1,4 @@
-# 📊 Insig Projects
+# 📊 InsigProjects
 
 **Convierte cada experiencia en conocimiento valioso y toma decisiones más inteligentes en el futuro.**
 
@@ -80,8 +80,7 @@ Además, la plataforma tiene como objetivo **analizar los datos con IA**, identi
 - 📄 **Listar usuarios** con soporte de paginación.
 - ➕ **Crear un nuevo usuario** mediante un formulario validado.
 - 🗑️ **Eliminar usuarios** desde la tabla.
-- 👁️ **Ver detalles del usuario** (perfil completo).
-- 📝 **Editar información de un usuario existente**.
+- 👁️ **Ver detalles del usuario**.
 
 ### 📁 Proyectos por Usuario
 
