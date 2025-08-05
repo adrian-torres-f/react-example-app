@@ -29,7 +29,7 @@ export function ContactSection() {
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Comienza Gratis Hoy</h3>
               <p className="text-indigo-100 mb-6 leading-relaxed">
-                Registra tu primer proyecto y descubre cómo ProjectHub puede transformar la manera en que tu equipo
+                Registra tu primer proyecto y descubre cómo InsigProjects puede transformar la manera en que tu equipo
                 aprende y crece.
               </p>
               <Button asChild size="lg" className="bg-white text-indigo-600 hover:bg-gray-100 w-full">
@@ -52,7 +52,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="text-white font-medium">Email</p>
-                    <p className="text-indigo-100">hola@projecthub.com</p>
+                    <p className="text-indigo-100">hola@insigprojects.com</p>
                   </div>
                 </div>
 

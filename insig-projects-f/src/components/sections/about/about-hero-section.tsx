@@ -24,7 +24,7 @@ export function AboutHeroSection() {
           </h1>
 
           <p className="text-xl leading-8 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
-            En ProjectHub creemos que cada proyecto, exitoso o fallido, contiene lecciones valiosas. Nuestra misión es
+            En InsigProjects creemos que cada proyecto, exitoso o fallido, contiene lecciones valiosas. Nuestra misión es
             ayudar a los equipos a capturar, analizar y aprender de cada experiencia para construir un futuro más
             exitoso.
           </p>
