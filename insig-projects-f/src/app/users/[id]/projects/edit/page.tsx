@@ -88,7 +88,7 @@ export default function EditProjectPage() {
       })
 
     } catch (error) {
-      console.error("Error loading project:", error)
+      console.error("Error al cargar el proyecto:", error)
       toast.error("Error al cargar el proyecto")
       router.push(`/users/${userId}`)
     } finally {
@@ -101,12 +101,12 @@ export default function EditProjectPage() {
     loadProject()
   }, [loadProject])
 
-  // Update document title
+  // Actualizar el titulo de la pagina
   useEffect(() => {
     document.title = project ? `Editar ${project.title} | ProjectHub` : "Editar Proyecto | ProjectHub"
   }, [project])
 
-  // Server Action - NO retorna nada
+  // Server Action para actualizar el proyecto
   const updateProjectAction = async (
     _prevState: unknown, 
     formData: FormData
@@ -148,7 +148,7 @@ export default function EditProjectPage() {
       if (!result.success) {
         const formErrors: { [key: string]: string } = {}
         
-        // Usar issues directamente en lugar de flatten()
+        // Recorrer los errores y asignarlos al objeto formErrors
         result.error.issues.forEach(issue => {
           const fieldName = issue.path[0] as string
           if (fieldName && !formErrors[fieldName]) { // Solo tomar el primer error por campo
@@ -336,7 +336,7 @@ export default function EditProjectPage() {
             )}
 
             <form action={submitAction} className="space-y-6">
-              {/* Hidden input for tech stack */}
+              {/* Input oculto para enviar el techStack al backend como string separado por comas */}
               <input type="hidden" name="techStack" value={formData.techStack.join(",")} />
 
               {/* Título */}
@@ -360,7 +360,7 @@ export default function EditProjectPage() {
                 </div>
               </div>
 
-              {/* Status y Team Size */}
+              {/* Estado y Tamaño del Equipo */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="status" className="text-blue-800 dark:text-blue-200">

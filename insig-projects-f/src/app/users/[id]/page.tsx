@@ -32,7 +32,6 @@ export default function UserProjectsPage() {
       // 1. Verificar que el usuario existe
       const userResponse = await getUserById(userId)
       
-      // Ahora esto SÍ funcionará porque no hay throw
       if (userResponse.status === "error" || !userResponse.data) {
         toast.error("Error", {
           description: userResponse.message || "El usuario que buscas no existe."
@@ -43,17 +42,17 @@ export default function UserProjectsPage() {
 
       // 2. Usuario válido, establecer datos
       setUser(userResponse.data)
-      console.log("User data:", JSON.stringify(userResponse.data, null, 2))
+      console.log("Datos del usuario:", JSON.stringify(userResponse.data, null, 2))
 
       // 3. Cargar proyectos
       const projectsResponse = await getProjectsByUserPaginated(userId, currentPage, 6)
       setProjects(projectsResponse.data?.projects ?? [])
       setTotalPages(projectsResponse.data?.totalPages ?? 1)
-      console.log("Projects data:", JSON.stringify(projectsResponse.data, null, 2))
+      console.log("Proyectos del usuario:", JSON.stringify(projectsResponse.data, null, 2))
 
     } catch (error) {
       // Solo errores de red inesperados llegarían aquí
-      console.error("Unexpected error:", error)
+      console.error("Error inesperado al cargar datos:", error)
       toast.error("Error de conexión", {
         description: "No se pudo conectar con el servidor. Inténtalo de nuevo."
       })
@@ -80,7 +79,7 @@ export default function UserProjectsPage() {
 
   const handleEditProject = (project: ProjectItemRs) => {
     router.push(`/users/${userId}/projects/edit?id=${project.id}`);
-    console.log("Edit project:", project)
+    console.log("Editando el proyecto:", project)
   }
 
   const handleDeleteProject = async (projectId: string) => {
@@ -96,7 +95,7 @@ export default function UserProjectsPage() {
         "Error",
         { description: "No se pudo eliminar el proyecto." }
       )
-      console.log("Error deleting project:", error)
+      console.log("Error al eliminar el proyecto:", error)
     }
   }
 
@@ -144,7 +143,6 @@ export default function UserProjectsPage() {
             </Button>
           </div>
           
-
           <div className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 shadow-sm border border-blue-100 dark:border-gray-700">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
               {/* Información principal */}

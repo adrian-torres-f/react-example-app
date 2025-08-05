@@ -46,12 +46,12 @@ export default function NewProjectPage() {
   const [validationErrors, setValidationErrors] = useState<Partial<Record<FormFields, string>>>({})
   const [touched, setTouched] = useState<Partial<Record<FormFields, boolean>>>({})
 
-  // Update document title
+  // Actualizar el titulo de la pagina
   useEffect(() => {
     document.title = "Nuevo Proyecto | ProjectHub"
   }, [])
 
-  // Server Action - NO retorna nada
+  // Server Action para crear el proyecto
   const createProjectAction = async (
     _prevState: unknown, 
     formData: FormData
@@ -88,7 +88,7 @@ export default function NewProjectPage() {
       if (!result.success) {
         const formErrors: { [key: string]: string } = {}
         
-        // Usar issues directamente en lugar de flatten()
+        // Recorrer los errores y asignarlos al objeto formErrors
         result.error.issues.forEach(issue => {
           const fieldName = issue.path[0] as string
           if (fieldName && !formErrors[fieldName]) { // Solo tomar el primer error por campo
@@ -234,7 +234,7 @@ export default function NewProjectPage() {
             )}
 
             <form action={submitAction} className="space-y-6">
-              {/* Hidden input for tech stack */}
+              {/* Input oculto para enviar el techStack al backend como string separado por comas */}
               <input type="hidden" name="techStack" value={formData.techStack.join(",")} />
 
               {/* Título */}
@@ -258,7 +258,7 @@ export default function NewProjectPage() {
                 </div>
               </div>
 
-              {/* Status y Team Size */}
+              {/* Estado y Tamaño del Equipo */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="status" className="text-blue-800 dark:text-blue-200">
