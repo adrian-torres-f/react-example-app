@@ -350,5 +350,4 @@ Si la solicitud contiene errores de validación, se responderá con:
 }
 ```
 
-
-
+### 📄 [⬅️ Volver al README principal](../README.md)

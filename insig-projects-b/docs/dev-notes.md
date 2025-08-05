@@ -84,3 +84,5 @@ El acceso a la base de datos se realiza con Prisma:
 - 🚫 Evita lógica de negocio en controladores. Mantén los controllers livianos.
 - 🧱 Crea nuevos módulos siguiendo la misma estructura (controller, service, repository, etc).
 - 🗂️ Organiza los DTOs en una carpeta dtos/ por módulo.
+
+### 📄 [⬅️ Volver al README principal](../README.md)

@@ -77,3 +77,4 @@ Esto creará las tablas en la base de datos y generará el cliente de Prisma par
 
 Elaborado por **Dario Quispe**  
 🔗 [https://github.com/Minkaspr](https://github.com/Minkaspr)
+
