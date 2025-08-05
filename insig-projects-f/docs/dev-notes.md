@@ -41,10 +41,23 @@ export interface ApiResponse<T> {
 ---
 
 ## ✅ Validaciones con Zod
-Los formularios utilizan React Hook Form en combinación con Zod para validaciones en el cliente.
-- Los esquemas de validación se encuentran en `lib/users/user.schema.ts` o similares.
-- Los errores se muestran dinámicamente debajo de los campos.
-- La estructura de los formularios es completamente tipada y segura.
+El proyecto soporta dos enfoques para formularios, ambos con validación Zod:
+
+### 🎯 Implementación Actual: useState + Server Actions + Zod
+
+- Los esquemas de validación se encuentran en `lib/projects/project.schema.ts`
+- Validación en tiempo real con `validateField()` usando Zod
+- Validación final en el servidor con `projectCreateSchema.safeParse()`
+- Los errores se muestran dinámicamente debajo de los campos
+- La estructura es completamente tipada con TypeScript
+
+### 🚀 Alternativa: React Hook Form + Zod
+
+- Para formularios complejos, se puede usar React Hook Form con `zodResolver`
+- Menor boilerplate y validación automática con los mismos esquemas Zod
+- Requiere: `npm install react-hook-form @hookform/resolvers`
+
+Ambos enfoques usan los mismos esquemas Zod y mantienen la misma calidad de validación.
 
 ----
 
