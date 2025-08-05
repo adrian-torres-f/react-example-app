@@ -243,7 +243,7 @@ Retorna la lista completa de proyectos.
 GET `/paginated?page=1&limit=10`
 Devuelve los proyectos paginados.
 
--Query Params:
+- Query Params:
   - `page` (opcional): número de página (default: `1`)
   - `limit` (opcional): elementos por página (default: `10`)
 

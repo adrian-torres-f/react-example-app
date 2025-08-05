@@ -39,7 +39,7 @@ npm install
 ```
 
 ### 2. Configurar las variables de entorno
-Crea un archivo .env en la raíz del proyecto con la siguiente variable (ajústala según tu configuración):
+Crea un archivo .env en la raíz del proyecto con las siguientes variables (ajústala según tu configuración):
 
 ```.env
 DATABASE_URL="postgresql://usuario:contraseña@localhost:5432/insigprojects"
