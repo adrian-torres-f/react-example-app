@@ -33,6 +33,13 @@ model Project {
   user            User     @relation(fields: [userId], references: [id])
 }
 
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String    @map("product_name")
+  description String    @map("description")
+  stock       Int       @map("stock") @default(0)
+}
+
 enum Status {
   SUCCESS
   FAILURE

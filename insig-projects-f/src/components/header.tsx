@@ -23,6 +23,12 @@ export function Header() {
       current: pathname.startsWith("/users"),
     },
     {
+      name: "Productos",
+      href: "/products",
+      icon: Info,
+      current: pathname.startsWith("/products"),
+    },
+    {
       name: "Nosotros",
       href: "/about",
       icon: Info,
